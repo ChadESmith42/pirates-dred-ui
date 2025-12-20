@@ -14,9 +14,6 @@ html {
   ));
 }
 
-
-
-
 :root {
   --spacing-00: 0.25rem;
   --spacing-01: 0.5rem;
@@ -49,3 +46,13 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
