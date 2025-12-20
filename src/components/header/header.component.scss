@@ -1,0 +1,13 @@
+@use '../../mixins/font.mixin.scss' as font;
+
+header {
+  padding-left: 1rem;
+}
+
+.title {
+  @include font.font-style('fancy');
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
