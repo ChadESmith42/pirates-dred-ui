@@ -1,0 +1,9 @@
+@use '../../mixins/font.mixin.scss' as font;
+
+.title {
+  @include font.font-style('fancy');
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
