@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@mixin font-style($style) {
+  @if $style == 'body' {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: var(--weight-normal);
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  } @else if $style == 'title' {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-size: var(--sizing-06);
+    font-weight: var(--weight-bolder);
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  } @else if $style == 'subtitle' {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-size: var(--sizing-05);
+    font-weight: var(--weight-bold);
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  } @else if $style == 'bold' {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-size: var(--sizing-03);
+    font-weight: var(--weight-bold);
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  } @else if $style == 'speech' {
+    font-family: "Macondo", cursive;
+    font-size: var(--sizing-03);
+    font-weight: var(--weight-normal);
+    font-optical-sizing: auto;
+    font-style: italic;
+    font-variation-settings:
+      "wdth" 100;
+  } @else if $style == 'action' {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    text-transform: uppercase;
+    letter-sizing: 0.1em;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  } @else if $style == 'fancy' {
+    font-family: "Macondo", cursive;
+    font-size: var(--sizing-06);
+    font-weight: var(--weight-bold);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  } @else {
+    @error "Unknown font style: #{$style}. Expected one of: body, title, subtitle, bold, speech, action.";
+  }
+}
