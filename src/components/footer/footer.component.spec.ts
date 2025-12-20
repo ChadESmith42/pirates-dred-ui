@@ -20,4 +20,20 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('setCopyright()', () => {
+    it('sets the copyright for a single year', () => {
+      const currentYear = 2025;
+      const testResult = '2025';
+      const result = component.setCopyright(currentYear);
+      expect(result).toBe(testResult);
+    });
+
+    it('sets the copyright to a range for future dates', () => {
+      const currentYear = 2050;
+      const testResult = '2025-2050';
+      const result = component.setCopyright(currentYear);
+      expect(result).toBe(testResult);
+    });
+  });
 });
