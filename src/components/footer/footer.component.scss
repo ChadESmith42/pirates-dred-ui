@@ -1,0 +1,16 @@
+@use '../../mixins/font.mixin.scss' as font;
+
+.title {
+  @include font.font-style('fancy');
+  padding-right: var(--spacing-04);
+}
+
+.copyright {
+  @include font.font-style('body');
+  padding-right: var(--spacing-02);
+}
+
+.terms {
+  @include font.font-style('body');
+  padding-right: var(--spacing-02);
+}

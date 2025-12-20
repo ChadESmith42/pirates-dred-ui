@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@use './mixins/font.mixin' as font;
+
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root {
+  --spacing-00: 0.25rem;
+  --spacing-01: 0.5rem;
+  --spacing-02: 0.75rem;
+  --spacing-03: 1rem;
+  --spacing-04: 1.25rem;
+  --spacing-05: 1.5rem;
+  --spacing-06: 2rem;
+  --spacing-07: 2.5rem;
+  --spacing-08: 3rem;
+  --spacing-09: 4rem;
+  --sizing-00: 0.25rem;
+  --sizing-01: 0.5rem;
+  --sizing-02: 0.75rem;
+  --sizing-03: 1rem;
+  --sizing-04: 1.25rem;
+  --sizing-05: 1.5rem;
+  --sizing-06: 2rem;
+  --sizing-07: 2.5rem;
+  --sizing-08: 3rem;
+  --sizing-09: 4rem;
+  --weight-normal: 400;
+  --weight-bold: 700;
+  --weight-bolder: 900;
+}
+
+body {
+  @include font.font-style('body');
+}
