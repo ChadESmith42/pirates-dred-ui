@@ -1,0 +1,36 @@
+@if(character | async; as character) {
+  <section class="character">
+    <article class="group-column">
+      <div class="name">{{ character.name }},
+        <span class="value">{{ character.class }}</span>
+      </div>
+      <div class="biography">{{ character.biography }}</div>
+    </article>
+    <article class="attributes">
+      <div class="group-row">
+        <span class="label">Life</span>
+        <span class="value">{{ character.life }}</span>
+      </div>
+      <div class="group-row">
+        <span class="label">Strength</span>
+        <span class="value">{{ character.strength }}</span>
+      </div>
+      <div class="group-row">
+        <span class="label">Agility</span>
+        <span class="value">{{ character.agility }}</span>
+      </div>
+      <div class="group-row">
+        <span class="label">Charisma</span>
+        <span class="value">{{ character.charisma }}</span>
+      </div>
+      <div class="group-row">
+        <span class="label">Intelligence</span>
+        <span class="value">{{ character.intelligence }}</span>
+      </div>
+      <div class="group-row">
+        <span class="label">Will</span>
+        <span class="value">{{ character.will }}</span>
+      </div>
+    </article>
+  </section>
+}

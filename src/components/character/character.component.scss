@@ -1,0 +1,36 @@
+@use '../../mixins/font.mixin.scss' as font;
+
+.character {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  padding: var(--spacing-06) var(--spacing-05) var(--spacing-06) var(--spacing-05);
+
+  .attributes {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacing-04);
+  }
+
+  .name {
+    @include font.font-style('speech');
+    font-size: var(--sizing-05);
+  }
+
+  .biography {
+    @include font.font-style('body');
+    max-width: 50%;
+  }
+
+  .group-row {
+    gap: var(--spacing-02);
+  }
+
+  .label {
+    @include font.font-style('action');
+  }
+
+  .value {
+    @include font.font-style('bold')
+  }
+}
