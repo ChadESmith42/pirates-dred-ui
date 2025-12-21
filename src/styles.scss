@@ -56,3 +56,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 main {
   flex: 1;
 }
+
+.group-column {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.group-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
