@@ -12,6 +12,10 @@
     gap: var(--spacing-04);
   }
 
+  .subtitle {
+    @include font.font-style('subtitle');
+  }
+
   .name {
     @include font.font-style('speech');
     font-size: var(--sizing-05);
@@ -32,5 +36,9 @@
 
   .value {
     @include font.font-style('bold')
+  }
+
+  .divider {
+    font-weight: 900;
   }
 }

@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharacterComponent } from './character.component';
+import { CharacterService } from '../../services/character.service';
+
+const mockCharacterService = {
+  getCharacter: jasmine.createSpy('getCharacter'),
+}
 
 describe('CharacterComponent', () => {
   let component: CharacterComponent;
@@ -8,7 +13,10 @@ describe('CharacterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CharacterComponent]
+      imports: [CharacterComponent],
+      providers: [
+        { provide: CharacterService, useValue: mockCharacterService },
+      ],
     })
     .compileComponents();
 

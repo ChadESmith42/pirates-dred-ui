@@ -2,7 +2,7 @@
   <section class="character">
     <article class="group-column">
       <div class="name">{{ character.name }},
-        <span class="value">{{ character.class }}</span>
+        <span class="value">{{ character.type }}</span>
       </div>
       <div class="biography">{{ character.biography }}</div>
     </article>
@@ -31,6 +31,21 @@
         <span class="label">Will</span>
         <span class="value">{{ character.will }}</span>
       </div>
+    </article>
+    <mat-divider></mat-divider>
+    <div class="subtitle">{{ character.type }} Buffs</div>
+    @let buffs = setBuffs(character.buffs);
+    <article class="attributes">
+
+      @for(buff of buffs; track buff.key; let last = $last) {
+      <div class="group-row">
+        <span class="label">{{ buff.key }}</span>
+        <span class="value">{{ buff.value }}</span>
+      </div>
+        @if(!last) {
+            <span class="divider"> | </span>
+        }
+      }
     </article>
   </section>
 }
