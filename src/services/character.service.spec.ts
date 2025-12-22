@@ -1,12 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 
 import { CharacterService } from './character.service';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('CharacterService', () => {
   let service: CharacterService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+      ],
+    });
     service = TestBed.inject(CharacterService);
   });
 
