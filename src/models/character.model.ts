@@ -1,6 +1,7 @@
 import { Percentage } from "./types.model";
 
 export interface Character {
+  id: string;
   biography: string;
   type: 'Pirate' | 'Sword Master' | 'Brute' | 'Brainiac' | 'Wizard' | 'Farmboy' | 'Maiden' | 'Prince';
   life: number;
