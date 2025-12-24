@@ -14,11 +14,13 @@ import {
 } from '../../models/character.model';
 import { Percentage } from '../../models/types.model';
 import { CharacterService } from '../../services/character.service';
+import { CharacterBuffPipe } from '../../pipes/character-buff.pipe';
 
 @Component({
   selector: 'pirates-dred-character',
   imports: [
     AsyncPipe,
+    CharacterBuffPipe,
     MatDivider,
   ],
   templateUrl: './character.component.html',

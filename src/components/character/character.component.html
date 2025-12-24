@@ -39,7 +39,7 @@
 
       @for(buff of buffs; track buff.key; let last = $last) {
       <div class="group-row">
-        <span class="label">{{ buff.key }}</span>
+        <span class="label">{{ buff.key | characterBuff }}</span>
         <span class="value">{{ buff.value }}</span>
       </div>
         @if(!last) {
