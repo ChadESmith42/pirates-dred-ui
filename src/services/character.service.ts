@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class CharacterService {
   private _client: HttpClient = inject(HttpClient);
   defaultCharacter: Farmboy = {
+    id: '1',
     biography: 'Poor. And perfect. With eyes like the sea after a storm.',
     type: 'Farmboy',
     life: 100,
