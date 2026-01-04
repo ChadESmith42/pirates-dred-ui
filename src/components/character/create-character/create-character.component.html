@@ -1,0 +1,44 @@
+<section class="create-character">
+  <h2 class="title">Create your character</h2>
+  <span class="description"></span>
+  <form [formGroup]="form">
+    <div class="define-character">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="name" [formControl]="name">
+        @if(name.hasError('required')) {
+          <mat-error>Please enter the character's name.</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Type</mat-label>
+        <mat-select [formControl]="type">
+          <mat-option value="Pirate">Pirate</mat-option>
+          <mat-option value="Sword Master">Sword Master</mat-option>
+          <mat-option value="Brute">Brute</mat-option>
+          <mat-option value="Brainiac">Brainiac</mat-option>
+          <mat-option value="Wizard">Wizard</mat-option>
+          <mat-option value="Farmboy">Farmboy</mat-option>
+          <mat-option value="Maiden">Maiden</mat-option>
+          <mat-option value="Prince">Prince</mat-option>
+        </mat-select>
+        @if(type.hasError('required')) {
+          <mat-error>Please select the character's type.</mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <pirates-dred-edit-traits [traits]="traits"></pirates-dred-edit-traits>
+
+    @if(selectedType$() !== '') {
+      <pirates-dred-edit-buffs [selectedType]="selectedType$()" [buffs]="buffs"></pirates-dred-edit-buffs>
+    } @else {
+      <h4>Character Buffs</h4>
+      <p>You must select the character type before setting the character buffs.</p>
+    }
+    <div>
+      <button mat-flat-button type="reset">Reset Character</button>
+      <button mat-flat-button type="button" (click)="submitCharacter()">Save</button>
+    </div>
+  </form>
+</section>

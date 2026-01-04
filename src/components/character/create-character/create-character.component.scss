@@ -1,0 +1,28 @@
+.create-character {
+  padding: 2rem 1rem 2.5rem 1rem;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+}
+
+.define-character {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
+
+.trait-form {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+  padding: 2rem 1rem 2.5rem 1rem;
+}
+
+.button-group {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
