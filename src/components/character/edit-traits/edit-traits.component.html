@@ -1,0 +1,62 @@
+<article class="traits" [formGroup]="traits">
+  <h4>Character Traits</h4>
+  <p>You have {{ calculatePointsRemaining() }} points remaining to distribute across your character traits.</p>
+  <p>You can automatically balance your character's traits using this button.</p>
+  <div class="button-group">
+    <button mat-flat-button type="button" (click)="balanceCharacterPoints()">Balance Character Points</button>
+    <button mat-flat-button type="button" (click)="resetCharacterPoints()">Reset Character Points</button>
+  </div>
+
+  <div class="trait-form">
+    <mat-form-field>
+      <mat-label>Intelligence</mat-label>
+      <input matInput type="number" [formControl]="intelligence" min="1" [max]="calculatePointsRemaining() + intelligence.value">
+      @if(intelligence.hasError('required')) {
+        <mat-error>Intelligence is required.</mat-error>
+      }
+      @if(intelligence.hasError('min')) {
+        <mat-error>Intelligence must be at least 1.</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Will</mat-label>
+      <input matInput type="number" [formControl]="will" min="1" [max]="calculatePointsRemaining() + will.value">
+      @if(will.hasError('required')) {
+        <mat-error>Will is required.</mat-error>
+      }
+      @if(will.hasError('min')) {
+        <mat-error>Will must be at least 1.</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Strength</mat-label>
+      <input matInput type="number" [formControl]="strength" min="1" [max]="calculatePointsRemaining() + strength.value">
+      @if(strength.hasError('required')) {
+        <mat-error>Strength is required.</mat-error>
+      }
+      @if(strength.hasError('min')) {
+        <mat-error>Strength must be at least 1.</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Agility</mat-label>
+      <input matInput type="number" [formControl]="agility" min="1" [max]="calculatePointsRemaining() + agility.value">
+      @if(agility.hasError('required')) {
+        <mat-error>Agility is required.</mat-error>
+      }
+      @if(agility.hasError('min')) {
+        <mat-error>Agility must be at least 1.</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Charisma</mat-label>
+      <input matInput type="number" [formControl]="charisma" min="1" [max]="calculatePointsRemaining() + charisma.value">
+      @if(charisma.hasError('required')) {
+        <mat-error>Charisma is required.</mat-error>
+      }
+      @if(charisma.hasError('min')) {
+        <mat-error>Charisma must be at least 1.</mat-error>
+      }
+    </mat-form-field>
+  </div>
+</article>
