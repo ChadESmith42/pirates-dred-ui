@@ -66,3 +66,9 @@ main {
   display: flex;
   flex-flow: row nowrap;
 }
+
+.button-group {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
