@@ -1,0 +1,27 @@
+<article class="edit-buffs">
+  <h4>{{ selectedType }} Buffs</h4>
+  <p>
+    {{ selectedType }} has unique buffs. You are awarded 5 points for each buff.
+    You may distribute the points any way you wish as long as each buff receives at least 1 point. You will likely
+    receive additional points during gameplay that can bolster any buffs you don't initially develop.
+  </p>
+  <p>
+    NOTE: A balanced character is ideal for the best gameplay results.
+  </p>
+  <span>Remaining Buff Points: {{ calculateBuffPointsRemaining(startingBuffPoints) }}</span>
+  @let buffEntries = buffs | keyvalue;
+  @for (buff of buffEntries; track buff.key) {
+    <div class="buff-control">
+      <span>{{ buff.key | characterBuff }}: {{ buff.value }}</span>
+      <button mat-icon-button color="primary" type="button" (click)="decrementBuff(buff.key)">-</button>
+      <button mat-icon-button color="primary" type="button" (click)="incrementBuff(buff.key)">+</button>
+    </div>
+  }
+  <div>
+    <p>You can automatically distribute your starting buff points evenly between all buffs.</p>
+    <div class="button-group">
+      <button mat-flat-button type="button" (click)="balanceBuffs(buffs)">Balance Buffs</button>
+      <button mat-flat-button type="button" (click)="resetBuffs(buffs)">Reset Buffs</button>
+    </div>
+  </div>
+</article>
